@@ -1,18 +1,22 @@
-.gradle/
-build/
-out/
-run/
-eclipse/
-src/META-INF/
-/*.iws
-/*.ipr
-/*.iml
-
-# Eclipse IDE files
+# eclipse
+bin
+*.launch
+.settings
+.metadata
 .classpath
 .project
-.settings
-bin/
 
-# Minecraft files
-*.launch
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
