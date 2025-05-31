@@ -34,24 +34,26 @@ dependencies {
     // Include OSXNarratorBlocker by default for the dev env, for M1+ Macs
     runtimeOnly 'com.cleanroommc:osxnarratorblocker:1.0'
 
-    implementation ("curse.maven:ic2-classic-242942:6584259")
-    implementation ("curse.maven:industrial-craft-242638:3838713")
-    implementation ("curse.maven:gadgetry-machines-282776:2634495")
-    implementation ("curse.maven:wanionlib-253043:4623135")
-    implementation ("curse.maven:crafttweaker-239197:6186559")
-    implementation ("curse.maven:cofh-core-69162:2920433")
-    implementation ("curse.maven:reborncore-237903:3330308")
-    implementation ("curse.maven:abyssalcraft-53686:6390722")
-    implementation ("curse.maven:railcraft-51195:2687757")
-    implementation ("curse.maven:thermal-expansion-69163:2926431")
-    implementation ("curse.maven:techreborn-233564:2966851")
-    implementation ("curse.maven:magneticraft-224808:3791484")
-    implementation ("curse.maven:forgelin-continuous-456403:6359253")
-    implementation ("curse.maven:mekanism-268560:2835175")
-    implementation ("curse.maven:industrial-foregoing-266515:2745321")
-    implementation ("curse.maven:immersive-engineering-231951:2974106")
-    implementation ("curse.maven:blood-magic-224791:2822288")
+    //implementation ("curse.maven:ic2-classic-242942:6584259")
+    //implementation ("curse.maven:industrial-craft-242638:3838713")
+    //implementation ("curse.maven:gadgetry-machines-282776:2634495")
+    //implementation ("curse.maven:wanionlib-253043:4623135")
+    //implementation ("curse.maven:crafttweaker-239197:6186559")
     //implementation ("curse.maven:cofh-core-69162:2920433")
+    //implementation ("curse.maven:reborncore-237903:3330308")
+    //implementation ("curse.maven:abyssalcraft-53686:6390722")
+    //implementation ("curse.maven:railcraft-51195:2687757")
+    //implementation ("curse.maven:thermal-expansion-69163:2926431")
+    //implementation ("curse.maven:techreborn-233564:2966851")
+    //implementation ("curse.maven:magneticraft-224808:3791484")
+    //implementation ("curse.maven:forgelin-continuous-456403:6359253")
+    //implementation ("curse.maven:mekanism-268560:2835175")
+    //implementation ("curse.maven:industrial-foregoing-266515:2745321")
+    //implementation ("curse.maven:immersive-engineering-231951:2974106")
+    //implementation ("curse.maven:blood-magic-224791:2822288")
+    //implementation ("curse.maven:cofh-core-69162:2920433")
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
     // Example - Dependency descriptor:
