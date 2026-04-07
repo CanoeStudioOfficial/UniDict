@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.common.IResourceShapedContainer;
 
 import javax.annotation.Nonnull;
@@ -53,7 +53,7 @@ public class DefineShapeMessage implements IMessage
 	@SideOnly(Side.CLIENT)
 	public static void sendToServer(@Nonnull final Container container, @Nonnull final ResourceLocation resourceLocation)
 	{
-		WanionLib.networkWrapper.sendToServer(new DefineShapeMessage(container.windowId, resourceLocation));
+		UniDict.networkWrapper.sendToServer(new DefineShapeMessage(container.windowId, resourceLocation));
 	}
 
 	public static class Handler implements IMessageHandler<DefineShapeMessage, IMessage>
@@ -61,8 +61,8 @@ public class DefineShapeMessage implements IMessage
 		@Override
 		public IMessage onMessage(final DefineShapeMessage message, final MessageContext ctx)
 		{
-			WanionLib.proxy.getThreadListener().addScheduledTask(() -> {
-				final EntityPlayer entityPlayer = WanionLib.proxy.getEntityPlayerFromContext(ctx);
+			UniDict.proxy.getThreadListener().addScheduledTask(() -> {
+				final EntityPlayer entityPlayer = UniDict.proxy.getEntityPlayerFromContext(ctx);
 				if (entityPlayer != null && entityPlayer.openContainer instanceof IResourceShapedContainer && entityPlayer.openContainer.windowId == message.windowId)
 					((IResourceShapedContainer) entityPlayer.openContainer).defineShape(message.resourceLocation);
 			});

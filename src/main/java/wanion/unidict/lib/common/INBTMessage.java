@@ -11,7 +11,7 @@ package wanion.unidict.lib.common;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.Container;
 import net.minecraft.nbt.NBTTagCompound;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.network.NBTMessage;
 
 import javax.annotation.Nonnull;
@@ -20,12 +20,12 @@ public interface INBTMessage
 {
 	static void sendNBT(final int windowId, @Nonnull final NBTTagCompound nbtTagCompound)
 	{
-		WanionLib.networkWrapper.sendToServer(new NBTMessage(windowId, nbtTagCompound));
+		UniDict.networkWrapper.sendToServer(new NBTMessage(windowId, nbtTagCompound));
 	}
 
 	static void sendNBT(final int windowId, @Nonnull final NBTTagCompound nbtTagCompound, @Nonnull final EntityPlayerMP entityPlayerMP)
 	{
-		WanionLib.networkWrapper.sendTo(new NBTMessage(windowId, nbtTagCompound), entityPlayerMP);
+		UniDict.networkWrapper.sendTo(new NBTMessage(windowId, nbtTagCompound), entityPlayerMP);
 	}
 
 	void receiveNBT(@Nonnull final NBTTagCompound nbtTagCompound);

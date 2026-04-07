@@ -8,6 +8,8 @@ package wanion.unidict.common;
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+import net.minecraft.util.ResourceLocation;
+
 import static java.io.File.separatorChar;
 
 public final class Reference
@@ -15,11 +17,12 @@ public final class Reference
 	public static final String MOD_ID = "unidict";
 	public static final String MOD_NAME = "UniDict";
 	public static final String MOD_VERSION = "@version@";
-	public static final String DEPENDENCIES = "required-after:wanionlib@[1.12.2-2.5,);after:*";
+	public static final String DEPENDENCIES = "after:*";
 	public static final char SLASH = separatorChar;
 	public static final String MC_VERSION = "[1.12,]";
 	public static final String CLIENT_PROXY = "wanion.unidict.proxy.ClientProxy";
 	public static final String SERVER_PROXY = "wanion.unidict.proxy.CommonProxy";
+	public static final ResourceLocation GUI_TEXTURES = new ResourceLocation(MOD_ID, "textures/gui/gui_textures.png");
 
 	private Reference() {}
 }

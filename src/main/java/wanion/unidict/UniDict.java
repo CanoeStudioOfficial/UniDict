@@ -15,6 +15,8 @@ import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkCheckHandler;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 import wanion.unidict.lib.common.Dependencies;
@@ -40,6 +42,8 @@ public final class UniDict
 
 	@SidedProxy(clientSide = CLIENT_PROXY, serverSide = SERVER_PROXY)
 	public static CommonProxy proxy;
+
+	public static SimpleNetworkWrapper networkWrapper;
 
 	private static Logger logger;
 
@@ -82,6 +86,7 @@ public final class UniDict
 	public void preInit(final FMLPreInitializationEvent event)
 	{
 		logger = event.getModLog();
+		networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MOD_ID);
 		proxy.preInit(event);
 	}
 

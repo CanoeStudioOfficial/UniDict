@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.common.ISmartNBT;
 
 public final class SmartNBTMessage implements IMessage
@@ -50,8 +50,8 @@ public final class SmartNBTMessage implements IMessage
 		@Override
 		public IMessage onMessage(final SmartNBTMessage smartNBT, final MessageContext ctx)
 		{
-			WanionLib.proxy.getThreadListener().addScheduledTask(() -> {
-				final EntityPlayer entityPlayer = WanionLib.proxy.getEntityPlayerFromContext(ctx);
+			UniDict.proxy.getThreadListener().addScheduledTask(() -> {
+				final EntityPlayer entityPlayer = UniDict.proxy.getEntityPlayerFromContext(ctx);
 				if (entityPlayer != null && entityPlayer.openContainer.windowId == smartNBT.windowId && entityPlayer.openContainer instanceof ISmartNBT)
 					((ISmartNBT) entityPlayer.openContainer).readNBT(smartNBT.nbtTagCompound);
 			});

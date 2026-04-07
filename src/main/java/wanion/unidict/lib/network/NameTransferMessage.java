@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.common.INameAcceptorContainer;
 
 import javax.annotation.Nonnull;
@@ -52,7 +52,7 @@ public class NameTransferMessage implements IMessage
 	@SideOnly(Side.CLIENT)
 	public static void sendToServer(@Nonnull final Container container, final String name)
 	{
-		WanionLib.networkWrapper.sendToServer(new NameTransferMessage(container.windowId, name));
+		UniDict.networkWrapper.sendToServer(new NameTransferMessage(container.windowId, name));
 	}
 
 	public static class Handler implements IMessageHandler<NameTransferMessage, IMessage>
@@ -60,8 +60,8 @@ public class NameTransferMessage implements IMessage
 		@Override
 		public IMessage onMessage(final NameTransferMessage message, final MessageContext ctx)
 		{
-			WanionLib.proxy.getThreadListener().addScheduledTask(() -> {
-				final EntityPlayer entityPlayer = WanionLib.proxy.getEntityPlayerFromContext(ctx);
+			UniDict.proxy.getThreadListener().addScheduledTask(() -> {
+				final EntityPlayer entityPlayer = UniDict.proxy.getEntityPlayerFromContext(ctx);
 				if (entityPlayer != null && entityPlayer.openContainer instanceof INameAcceptorContainer && entityPlayer.openContainer.windowId == message.windowId)
 					((INameAcceptorContainer) entityPlayer.openContainer).acceptName(message.name);
 			});

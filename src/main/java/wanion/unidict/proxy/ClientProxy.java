@@ -8,9 +8,15 @@ package wanion.unidict.proxy;
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.RecipeBookClient;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.IThreadListener;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import wanion.unidict.UniDict;
+
+import javax.annotation.Nonnull;
 
 public class ClientProxy extends CommonProxy {
 	@Override
@@ -26,5 +32,17 @@ public class ClientProxy extends CommonProxy {
 			UniDict.getLogger().error("Failed to fix Recipe Book");
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public EntityPlayer getEntityPlayerFromContext(@Nonnull final MessageContext messageContext)
+	{
+		return messageContext.side.isClient() ? Minecraft.getMinecraft().player : super.getEntityPlayerFromContext(messageContext);
+	}
+
+	@Override
+	public IThreadListener getThreadListener()
+	{
+		return Minecraft.getMinecraft();
 	}
 }

@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import org.apache.commons.lang3.text.WordUtils;
 import org.apache.logging.log4j.Logger;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.common.Instantiator;
 
 import javax.annotation.Nonnull;
@@ -44,7 +44,7 @@ public abstract class AbstractModule
 		if (threadList.isEmpty())
 			return;
 		final ExecutorService moduleThreadExecutor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-		final Logger logger = WanionLib.getLogger();
+		final Logger logger = UniDict.getLogger();
 		final ModContainer modContainer = Loader.instance().activeModContainer();
 		if (modContainer == null)
 			throw new RuntimeException("This should never happen.");

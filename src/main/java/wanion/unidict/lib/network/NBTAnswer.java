@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import wanion.unidict.lib.WanionLib;
+import wanion.unidict.UniDict;
 import wanion.unidict.lib.common.INBTMessage;
 
 public class NBTAnswer implements IMessage
@@ -61,8 +61,8 @@ public class NBTAnswer implements IMessage
 		@Override
 		public NBTAnswer onMessage(final NBTAnswer nbtMessage, final MessageContext ctx)
 		{
-			final EntityPlayer entityPlayer = WanionLib.proxy.getEntityPlayerFromContext(ctx);
-			WanionLib.proxy.getThreadListener().addScheduledTask(() -> {
+			final EntityPlayer entityPlayer = UniDict.proxy.getEntityPlayerFromContext(ctx);
+			UniDict.proxy.getThreadListener().addScheduledTask(() -> {
 				if (entityPlayer != null && entityPlayer.openContainer.windowId == nbtMessage.getWindowId() && Minecraft.getMinecraft().currentScreen instanceof INBTMessage)
 					((INBTMessage) Minecraft.getMinecraft().currentScreen).receiveNBT(nbtMessage.getNbtMessage());
 			});

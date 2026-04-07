@@ -8,20 +8,29 @@ package wanion.unidict.proxy;
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.IThreadListener;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ForgeVersion;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.discovery.ASMDataTable;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.GameData;
 import net.minecraftforge.registries.RegistryManager;
 import wanion.unidict.lib.common.Dependencies;
 import wanion.unidict.lib.module.AbstractModule;
 import wanion.unidict.lib.module.ModuleHandler;
+import wanion.unidict.lib.network.*;
 import wanion.unidict.Config;
 import wanion.unidict.UniDict;
 import wanion.unidict.common.SpecificEntryItemStackComparator;
@@ -32,6 +41,7 @@ import wanion.unidict.modconfig.ModConfigModule;
 import wanion.unidict.plugin.crafttweaker.UniDictCraftTweakerPlugin;
 import wanion.unidict.resource.UniResourceHandler;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -45,12 +55,30 @@ public class CommonProxy
 
 	public void preInit(final FMLPreInitializationEvent event)
 	{
+		registerNetworkMessages();
 		moduleHandler = searchForModules(populateModules(new ModuleHandler()), event.getAsmData());
 		searchForIntegrations(event.getAsmData());
 		if (Loader.isModLoaded("crafttweaker"))
 			UniDictCraftTweakerPlugin.preInit();
 		(uniResourceHandler = new UniResourceHandler()).preInit();
 		moduleHandler.startModules(event);
+	}
+
+	private void registerNetworkMessages()
+	{
+		int d = 0;
+		UniDict.networkWrapper.registerMessage(SmartNBTMessage.Handler.class, SmartNBTMessage.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(SmartNBTMessage.Handler.class, SmartNBTMessage.class, d++, Side.CLIENT);
+		UniDict.networkWrapper.registerMessage(NBTMessage.Handler.class, NBTMessage.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(NBTMessage.Handler.class, NBTMessage.class, d++, Side.CLIENT);
+		UniDict.networkWrapper.registerMessage(NBTAnswer.Handler.class, NBTAnswer.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(NBTAnswer.Handler.class, NBTAnswer.class, d++, Side.CLIENT);
+		UniDict.networkWrapper.registerMessage(NameTransferMessage.Handler.class, NameTransferMessage.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(NameTransferMessage.Handler.class, NameTransferMessage.class, d++, Side.CLIENT);
+		UniDict.networkWrapper.registerMessage(ClearShapeMessage.Handler.class, ClearShapeMessage.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(ClearShapeMessage.Handler.class, ClearShapeMessage.class, d++, Side.CLIENT);
+		UniDict.networkWrapper.registerMessage(DefineShapeMessage.Handler.class, DefineShapeMessage.class, d++, Side.SERVER);
+		UniDict.networkWrapper.registerMessage(DefineShapeMessage.Handler.class, DefineShapeMessage.class, d, Side.CLIENT);
 	}
 
 	public void init(final FMLInitializationEvent event)
@@ -150,5 +178,35 @@ public class CommonProxy
 		dependencies = null;
 		SpecificKindItemStackComparator.kindSpecificComparators = null;
 		SpecificEntryItemStackComparator.entrySpecificComparators = null;
+	}
+
+	public EntityPlayer getEntityPlayerFromContext(@Nonnull final MessageContext messageContext)
+	{
+		return messageContext.getServerHandler().player;
+	}
+
+	public final MinecraftServer getMinecraftServer()
+	{
+		return FMLCommonHandler.instance().getMinecraftServerInstance();
+	}
+
+	public final EntityPlayerMP getPlayerByUsername(String userName)
+	{
+		return getMinecraftServer().getPlayerList().getPlayerByUsername(userName);
+	}
+
+	public final boolean isClient()
+	{
+		return FMLCommonHandler.instance().getEffectiveSide().isClient();
+	}
+
+	public final boolean isServer()
+	{
+		return !isClient();
+	}
+
+	public IThreadListener getThreadListener()
+	{
+		return getMinecraftServer();
 	}
 }
