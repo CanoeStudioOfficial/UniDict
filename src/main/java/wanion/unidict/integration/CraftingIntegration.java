@@ -19,7 +19,7 @@ import net.minecraftforge.registries.GameData;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryManager;
 import nmd.primal.forgecraft.blocks.machine.Forge;
-import wanion.lib.recipe.IRecipeResearcher;
+import wanion.unidict.lib.recipe.IRecipeResearcher;
 import wanion.unidict.recipe.*;
 import wanion.unidict.resource.UniResourceContainer;
 

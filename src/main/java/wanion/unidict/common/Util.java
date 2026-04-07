@@ -17,7 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreIngredient;
-import wanion.lib.common.MetaItem;
+import wanion.unidict.lib.common.MetaItem;
 import wanion.unidict.Config;
 import wanion.unidict.UniDict;
 import wanion.unidict.resource.Resource;
@@ -29,7 +29,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
-import static wanion.lib.common.Util.getModName;
+import static wanion.unidict.lib.common.Util.getModName;
 
 public final class Util
 {

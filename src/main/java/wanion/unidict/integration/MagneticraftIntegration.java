@@ -23,7 +23,7 @@ import com.cout970.magneticraft.api.registries.machines.sluicebox.ISluiceBoxReci
 import com.google.common.collect.Lists;
 import kotlin.Pair;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.util.List;
 

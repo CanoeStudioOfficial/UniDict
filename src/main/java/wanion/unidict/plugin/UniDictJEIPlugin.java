@@ -13,7 +13,7 @@ import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.ingredients.IIngredientBlacklist;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.MetaItem;
+import wanion.unidict.lib.common.MetaItem;
 import wanion.unidict.UniDict;
 import wanion.unidict.common.Util;
 

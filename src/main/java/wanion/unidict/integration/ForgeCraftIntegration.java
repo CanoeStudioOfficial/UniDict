@@ -11,7 +11,7 @@ package wanion.unidict.integration;
 import nmd.primal.forgecraft.crafting.AnvilCrafting;
 import nmd.primal.forgecraft.crafting.CastingCrafting;
 import nmd.primal.forgecraft.crafting.ForgeCrafting;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.util.List;
 

@@ -14,7 +14,7 @@ import com.mcmoddev.lib.registry.recipe.ICrusherRecipe;
 import com.mcmoddev.lib.registry.recipe.OreDictionaryCrusherRecipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,7 +13,7 @@ import cofh.thermalexpansion.util.managers.machine.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

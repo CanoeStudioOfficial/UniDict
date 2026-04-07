@@ -12,7 +12,7 @@ import gnu.trove.set.TIntSet;
 import gnu.trove.set.hash.TIntHashSet;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import wanion.lib.common.MetaItem;
+import wanion.unidict.lib.common.MetaItem;
 import wanion.unidict.common.Util;
 import wanion.unidict.resource.UniResourceContainer;
 
@@ -29,7 +29,7 @@ final class FurnaceIntegration extends AbstractIntegrationThread
 	FurnaceIntegration()
 	{
 		super("Furnace");
-		experienceMap = wanion.lib.common.Util.getField(FurnaceRecipes.class, "experienceList", "field_77605_c", FurnaceRecipes.instance(), Map.class);
+		experienceMap = wanion.unidict.lib.common.Util.getField(FurnaceRecipes.class, "experienceList", "field_77605_c", FurnaceRecipes.instance(), Map.class);
 		outputsToIgnore = MetaItem.getSet(Util.stringListToItemStackList(config.furnaceOutputsToIgnore));
 		inputsToIgnore = MetaItem.getSet(Util.stringListToItemStackList(config.furnaceInputsToIgnore));
 	}

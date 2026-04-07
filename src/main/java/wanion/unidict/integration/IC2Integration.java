@@ -18,7 +18,7 @@ import ic2.core.recipe.ScrapboxRecipeManager;
 import ic2.core.recipe.dynamic.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Constructor;

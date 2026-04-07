@@ -9,9 +9,9 @@ package wanion.unidict.modconfig;
  */
 
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.Util;
-import wanion.lib.module.LoadStage;
-import wanion.lib.module.SpecifiedLoadStage;
+import wanion.unidict.lib.common.Util;
+import wanion.unidict.lib.module.LoadStage;
+import wanion.unidict.lib.module.SpecifiedLoadStage;
 
 import java.util.Map;
 

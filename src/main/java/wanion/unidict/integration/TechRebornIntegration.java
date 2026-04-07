@@ -13,7 +13,7 @@ import reborncore.api.recipe.RecipeHandler;
 import techreborn.api.reactor.FusionReactorRecipe;
 import techreborn.api.reactor.FusionReactorRecipeHelper;
 import techreborn.api.recipe.Recipes;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.lang.reflect.Field;
 

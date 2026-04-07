@@ -1,0 +1,36 @@
+package wanion.unidict.lib.recipe.advanced;
+
+/*
+ * Created by WanionCane(https://github.com/WanionCane).
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nonnull;
+import java.util.List;
+
+public interface IAdvancedRecipe
+{
+	boolean isShaped();
+
+	short getRecipeKey();
+
+	short getRecipeSize();
+
+	int getWidth();
+
+	int getHeight();
+
+	@Nonnull
+	List<Object> getInputs();
+
+	@Nonnull
+	ItemStack getOutput();
+
+	boolean recipeMatches(@Nonnull final InventoryCrafting inventoryCrafting, final int offSetX, final int offSetY);
+}

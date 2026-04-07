@@ -15,8 +15,8 @@ import com.google.common.collect.ArrayListMultimap;
 import gnu.trove.set.TIntSet;
 import gnu.trove.set.hash.TIntHashSet;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.MetaItem;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.MetaItem;
+import wanion.unidict.lib.common.Util;
 import wanion.unidict.UniDict;
 import wanion.unidict.UniOreDictionary;
 

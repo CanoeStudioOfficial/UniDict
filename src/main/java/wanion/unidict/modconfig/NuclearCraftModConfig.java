@@ -1,8 +1,8 @@
 package wanion.unidict.modconfig;
 
-import wanion.lib.common.Util;
-import wanion.lib.module.LoadStage;
-import wanion.lib.module.SpecifiedLoadStage;
+import wanion.unidict.lib.common.Util;
+import wanion.unidict.lib.module.LoadStage;
+import wanion.unidict.lib.module.SpecifiedLoadStage;
 
 @SpecifiedLoadStage(stage = LoadStage.PRE_INIT)
 public class NuclearCraftModConfig extends AbstractModConfigThread  {

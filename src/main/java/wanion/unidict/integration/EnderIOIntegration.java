@@ -15,7 +15,7 @@ import crazypants.enderio.base.recipe.RecipeOutput;
 import crazypants.enderio.base.recipe.alloysmelter.AlloyRecipeManager;
 import crazypants.enderio.base.recipe.sagmill.SagMillRecipeManager;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.FixedSizeList;
+import wanion.unidict.lib.common.FixedSizeList;
 
 import java.util.Iterator;
 import java.util.List;

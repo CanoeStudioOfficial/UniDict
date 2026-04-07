@@ -11,7 +11,7 @@ package wanion.unidict.modconfig;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Loader;
 import org.apache.commons.lang3.text.WordUtils;
-import wanion.lib.module.AbstractModule;
+import wanion.unidict.lib.module.AbstractModule;
 import wanion.unidict.UniDict;
 import wanion.unidict.common.Reference;
 

@@ -21,9 +21,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import wanion.lib.common.MetaItem;
-import wanion.lib.recipe.RecipeAttributes;
-import wanion.lib.recipe.RecipeHelper;
+import wanion.unidict.lib.common.MetaItem;
+import wanion.unidict.lib.recipe.RecipeAttributes;
+import wanion.unidict.lib.recipe.RecipeHelper;
 import wanion.unidict.common.Reference;
 import wanion.unidict.resource.UniResourceContainer;
 

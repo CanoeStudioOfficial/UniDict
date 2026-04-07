@@ -3,7 +3,7 @@ package wanion.unidict.integration;
 import com.brandon3055.draconicevolution.lib.OreDoublingRegistry;
 import gnu.trove.set.TIntSet;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.MetaItem;
+import wanion.unidict.lib.common.MetaItem;
 import wanion.unidict.common.Util;
 
 import java.util.Map;

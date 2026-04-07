@@ -19,7 +19,7 @@ import mekanism.common.recipe.machines.SawmillRecipe;
 import mekanism.common.recipe.outputs.ItemStackOutput;
 import mekanism.common.recipe.outputs.PressurizedOutput;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.MetaItem;
+import wanion.unidict.lib.common.MetaItem;
 import wanion.unidict.resource.UniResourceContainer;
 
 import javax.annotation.Nonnull;

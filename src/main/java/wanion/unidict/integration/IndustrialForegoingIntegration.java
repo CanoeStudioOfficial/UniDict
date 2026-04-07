@@ -11,7 +11,7 @@ package wanion.unidict.integration;
 import com.buuz135.industrial.api.recipe.LaserDrillEntry;
 import com.buuz135.industrial.api.recipe.ore.OreFluidEntrySieve;
 import net.minecraft.item.ItemStack;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.Util;
 
 import java.util.List;
 

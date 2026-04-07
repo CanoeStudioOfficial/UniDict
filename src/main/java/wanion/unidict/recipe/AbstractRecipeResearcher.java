@@ -9,7 +9,7 @@ package wanion.unidict.recipe;
  */
 
 import net.minecraft.item.crafting.IRecipe;
-import wanion.lib.recipe.IRecipeResearcher;
+import wanion.unidict.lib.recipe.IRecipeResearcher;
 import wanion.unidict.UniDict;
 import wanion.unidict.UniOreDictionary;
 import wanion.unidict.resource.ResourceHandler;

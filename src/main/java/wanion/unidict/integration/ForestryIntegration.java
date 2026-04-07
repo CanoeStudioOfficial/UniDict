@@ -8,9 +8,9 @@ import forestry.factory.recipes.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.oredict.OreIngredient;
-import wanion.lib.common.Util;
-import wanion.lib.recipe.RecipeAttributes;
-import wanion.lib.recipe.RecipeHelper;
+import wanion.unidict.lib.common.Util;
+import wanion.unidict.lib.recipe.RecipeAttributes;
+import wanion.unidict.lib.recipe.RecipeHelper;
 import wanion.unidict.resource.UniResourceContainer;
 
 import javax.annotation.Nonnull;

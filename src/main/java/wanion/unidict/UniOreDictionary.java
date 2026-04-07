@@ -12,8 +12,8 @@ import gnu.trove.map.TIntObjectMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import wanion.lib.common.MetaItem;
-import wanion.lib.common.Util;
+import wanion.unidict.lib.common.MetaItem;
+import wanion.unidict.lib.common.Util;
 import wanion.unidict.UniDict.IDependency;
 
 import javax.annotation.Nonnull;

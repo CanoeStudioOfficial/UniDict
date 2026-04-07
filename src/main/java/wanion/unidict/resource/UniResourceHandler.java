@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLStateEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.text.WordUtils;
-import wanion.lib.common.Dependencies;
+import wanion.unidict.lib.common.Dependencies;
 import wanion.unidict.Config;
 import wanion.unidict.UniDict;
 import wanion.unidict.UniOreDictionary;

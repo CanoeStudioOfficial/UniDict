@@ -24,7 +24,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Comparator;
 
-import static wanion.lib.common.Util.getModName;
+import static wanion.unidict.lib.common.Util.getModName;
 import static wanion.unidict.common.Reference.MOD_ID;
 import static wanion.unidict.common.Reference.SLASH;
 

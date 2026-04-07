@@ -9,9 +9,9 @@ package wanion.unidict.modconfig;
  */
 
 import org.apache.logging.log4j.Logger;
-import wanion.lib.module.AbstractModuleThread;
-import wanion.lib.module.LoadStage;
-import wanion.lib.module.SpecifiedLoadStage;
+import wanion.unidict.lib.module.AbstractModuleThread;
+import wanion.unidict.lib.module.LoadStage;
+import wanion.unidict.lib.module.SpecifiedLoadStage;
 import wanion.unidict.Config;
 import wanion.unidict.UniDict;
 import wanion.unidict.resource.ResourceHandler;
