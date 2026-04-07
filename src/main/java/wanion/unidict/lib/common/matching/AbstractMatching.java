@@ -12,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import wanion.unidict.lib.common.ICopyable;
 import wanion.unidict.lib.common.ISmartNBT;
-import wanion.unidict.lib.common.control.IControlNameable;
 import wanion.unidict.lib.common.matching.matcher.AbstractMatcher;
 import wanion.unidict.lib.common.matching.matcher.ItemStackMatcher;
 import wanion.unidict.lib.common.matching.matcher.MatcherEnum;
@@ -20,7 +19,7 @@ import wanion.unidict.lib.common.matching.matcher.MatcherEnum;
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
-public abstract class AbstractMatching<M extends AbstractMatching<M>> implements ISmartNBT, ICopyable<M>, IControlNameable
+public abstract class AbstractMatching<M extends AbstractMatching<M>> implements ISmartNBT, ICopyable<M>
 {
 	private static final Supplier<ItemStack> EMPTY_SUPPLIER = () -> ItemStack.EMPTY;
 	protected final Supplier<ItemStack> stackSupplier;
@@ -112,13 +111,6 @@ public abstract class AbstractMatching<M extends AbstractMatching<M>> implements
 
 	public void customWriteNBT(@Nonnull final NBTTagCompound nbtTagCompound) {}
 	public void customReadNBT(@Nonnull final NBTTagCompound nbtTagCompound) {}
-
-	@Override
-	@Nonnull
-	public final String getControlName()
-	{
-		return "wanionlib.matching.control";
-	}
 
 	public final int getNumber()
 	{

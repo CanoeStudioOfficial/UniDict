@@ -14,10 +14,7 @@ import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.Logger;
-import wanion.unidict.lib.client.ClientTickHandler;
 import wanion.unidict.lib.common.Dependencies;
 import wanion.unidict.lib.proxy.CommonProxy;
 
@@ -43,12 +40,6 @@ public final class WanionLib
 	public static Logger getLogger()
 	{
 		return instance.logger;
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static ClientTickHandler getClientTickHandler()
-	{
-		return instance.dependencies.get(ClientTickHandler.class);
 	}
 
 	@Mod.EventHandler
