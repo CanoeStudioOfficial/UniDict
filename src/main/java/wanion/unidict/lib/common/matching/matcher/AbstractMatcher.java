@@ -69,6 +69,6 @@ public abstract class AbstractMatcher<M extends AbstractMatcher<M>> implements I
 	@Nonnull
 	public String getDescription()
 	{
-		return I18n.format("wanionlib.matching.matcher." + getMatcherEnum().getLowerCaseName());
+		return I18n.format("unidict.matching.matcher." + getMatcherEnum().getLowerCaseName());
 	}
 }
